@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# Sum It Up
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### This  project  employs  Natural  Language  Processing  (NLP)  techniques  to  summarize  text  data  and manipulate textual information.
+The NLP algorithms used include text pre-processing, text 
+representation, summarization, and data manipulation methods. The goal of the project is to condense 
+large amounts of text into a more concise and manageable form while still retaining the key information 
+and context. Additionally, the project also enables the manipulation of textual data to add, remove, or 
+modify specific parts of the text. The results demonstrate the efficiency and effectiveness of the NLP-
+based approach in summarizing text and manipulating textual data.
+<br/>
 
-## Available Scripts
+# Installation Guide
 
-In the project directory, you can run:
+<br/>
 
-### `npm start`
+## Install Node Modules
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br/>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Use the following command to install all the required pacakages for react app
 
-### `npm test`
+```
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br/>
 
-### `npm run build`
+## Using Virtual Enviroment in Python
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br/>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ - First intall virtualenv in your main environment
+```
+pip install virtualenv
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Create Virtual Environment
+```
+virtualenv EnvName
+```
 
-### `npm run eject`
+- Use Environment
+```
+EnvName\Scripts\activate
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Note:**
+You may face error while activating environment. This is due to restriction in windows. Use Following to unlock restrictions.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+set-executionpolicy remotesigned
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- To create a requirements.txt
+```
+pip freeze > requirements.txt
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- To install a requirements.txt file in your environment
+```
+pip install -r requirements.txt
+```
 
-## Learn More
+- To update all packages
+```
+pip freeze | %{$_.split('==')[0]} | %{pip install --upgrade $_}
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- To close the environment
+```
+deactivate
+```
