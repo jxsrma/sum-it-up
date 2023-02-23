@@ -9,8 +9,8 @@ import time
 
 @api_view(["GET"])
 def getData(request):
-    person = {"name": "Dennis", "age": "28"}
-    return Response(person)
+    home = {"name": "This is Homepage"}
+    return Response(home)
 
 
 @api_view(["POST"])
@@ -24,7 +24,7 @@ def summerize(request):
 
         summarizer = pipeline("summarization")
         summary = summarizer(paragraph, max_length=100, min_length=50, do_sample=False)
-        summary = summary[0]['summary_text']
+        summary = summary[0]["summary_text"]
         end = time.time()
         timeTaken = round(end - start)
         if timeTaken < 59:
