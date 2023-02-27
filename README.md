@@ -11,6 +11,13 @@ based approach in summarizing text and manipulating textual data.
 
 # Installation Guide
 
+<br>
+
+## Punctuation Model
+```
+https://huggingface.co/oliverguhr/fullstop-punctuation-multilang-large/blob/main/tf_model.h5
+```
+
 <br/>
 
 ## Install Node Modules

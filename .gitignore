@@ -25,3 +25,4 @@ yarn-error.log*
 # virtual environment
 sitEnv
 .env
+/model
