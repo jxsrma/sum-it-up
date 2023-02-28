@@ -1,0 +1,130 @@
+{
+    "output": [{
+            "ruleId": "ENGLISH_WORD_REPEAT_RULE",
+            "message": "Possible typo: you repeated a word",
+            "replacements": [
+                "for"
+            ],
+            "offsetInContext": 43,
+            "context": "...Text\" button.Click the colored phrases for for information on potential errors.or we...",
+            "offset ": 165,
+            "errorLength ": 7,
+            "category": "MISC",
+            "ruleIssueType": "duplication",
+            "sentence": "Click the colored phrases for for information on potential errors."
+        },
+        {
+            "ruleId": "UPPERCASE_SENTENCE_START",
+            "message": "This sentence does not start with an uppercase letter.",
+            "replacements": [
+                "Or"
+            ],
+            "offsetInContext": 43,
+            "context": "...or for information on potential errors. or we can use this text too see an some of...",
+            "offset": 206,
+            "errorLength": 2,
+            "category": "CASING",
+            "ruleIssueType": "typographical",
+            "sentence": "or we can use this text too see an some of the issues that LanguageTool can dedect."
+        },
+        {
+            "ruleId": "TOO_TO",
+            "message": "Did you mean “to see”?",
+            "replacements": [
+                "to see"
+            ],
+            "offsetInContext": 43,
+            "context": "...tential errors. or we can use this text too see an some of the issues that LanguageTool...",
+            "offset": 230,
+            "errorLength": 7,
+            "category": "CONFUSED_WORDS",
+            "ruleIssueType": "misspelling",
+            "sentence": "or we can use this text too see an some of the issues that LanguageTool can dedect."
+        },
+        {
+            "ruleId": "EN_A_VS_AN",
+            "message": "Use “a” instead of ‘an’ if the following word doesn’t start with a vowel sound, e.g. ‘a sentence’, ‘a university’.",
+            "replacements": [
+                "a"
+            ],
+            "offsetInContext": 43,
+            "context": "...errors. or we can use this text too see an some of the issues that LanguageTool ca...",
+            "offset": 238,
+            "errorLength": 2,
+            "category": "MISC",
+            "ruleIssueType": "misspelling",
+            "sentence": "or we can use this text too see an some of the issues that LanguageTool can dedect."
+        },
+        {
+            "ruleId": "MORFOLOGIK_RULE_EN_US",
+            "message": "Possible spelling mistake found.",
+            "replacements": [
+                "detect",
+                "defect",
+                "deduct",
+                "deject"
+            ],
+            "offsetInContext": 43,
+            "context": "...ome of the issues that LanguageTool can dedect. Whot do someone thinks of grammar chec...",
+            "offset": 282,
+            "errorLength": 6,
+            "category": "TYPOS",
+            "ruleIssueType": "misspelling",
+            "sentence": "or we can use this text too see an some of the issues that LanguageTool can dedect."
+        },
+        {
+            "ruleId": "MORFOLOGIK_RULE_EN_US",
+            "message": "Possible spelling mistake found.",
+            "replacements": [
+                "Who",
+                "What",
+                "Shot",
+                "Whom",
+                "Hot",
+                "WHO",
+                "Whet",
+                "Whit",
+                "Whoa",
+                "Whop",
+                "WHT",
+                "Wot",
+                "W hot"
+            ],
+            "offsetInContext": 43,
+            "context": "...he issues that LanguageTool can dedect. Whot do someone thinks of grammar checkers? ...",
+            "offset": 290,
+            "errorLength": 4,
+            "category": "TYPOS",
+            "ruleIssueType": "misspelling",
+            "sentence": "Whot do someone thinks of grammar checkers?"
+        },
+        {
+            "ruleId": "PLEASE_NOT_THAT",
+            "message": "Did you mean “note”?",
+            "replacements": [
+                "note"
+            ],
+            "offsetInContext": 43,
+            "context": "...eone thinks of grammar checkers? Please not that they are not perfect. Style proble...",
+            "offset": 341,
+            "errorLength": 3,
+            "category": "TYPOS",
+            "ruleIssueType": "misspelling",
+            "sentence": "Please not that they are not perfect."
+        },
+        {
+            "ruleId": "PM_IN_THE_EVENING",
+            "message": "This is redundant. Consider using “P.M.”",
+            "replacements": [
+                "P.M."
+            ],
+            "offsetInContext": 43,
+            "context": "...yle problems get a blue marker: It is 7 P.M. in the evening. The weather was nice on Monday,22 Nov...",
+            "offset ": 414,
+            "errorLength ": 19,
+            "category ": "REDUNDANCY ",
+            "ruleIssueType ": "style ",
+            "sentence ": "Style problemsget a blue marker: It is 7 P.M.in the evening.            "
+        }
+    ]
+}
