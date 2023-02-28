@@ -63,3 +63,42 @@ http://127.0.0.1:8000/send
 
 
 <hr>
+
+## Punctuation
+
+<br>
+
+### POST
+```
+http://127.0.0.1:8000/send
+```
+
+<br>
+
+### Data
+
+``` json
+{
+  "operation":"punctuate",
+  "paragraph":"Paragraph for summerization"
+}
+```
+
+### Request
+
+``` json
+{
+  "operation":"punctuate",
+  "paragraph":"my pin number has two 5s i ts easy to remember."
+}
+```
+
+### Response
+
+``` json
+{
+  "success": true,
+  "data": "My pin number has two 5s It's easy to remember.",
+  "timeTaken": "1 sec"
+}
+```
