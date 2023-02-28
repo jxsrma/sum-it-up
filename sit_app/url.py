@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path('',views.getData),
-    path('send',views.summerize)
+    path('send',views.optimize)
 ]

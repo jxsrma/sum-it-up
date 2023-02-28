@@ -2,9 +2,10 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 import json
-import time
 
-# Create your views here.
+from .functions import summerization, punctuation
+
+# Views.
 
 
 @api_view(["GET"])
@@ -14,36 +15,20 @@ def getData(request):
 
 
 @api_view(["POST"])
-def summerize(request):
+def optimize(request):
     data = json.loads(request.body)
-    paragraph = data["paragraph"]
-    try:
-        start = time.time()
 
-        from transformers import pipeline
+    # Summerization
+    if data["operation"] == "summerize":
+        paragraph = data["paragraph"]
+        maxLength = data["maxLength"]
+        minLength = data["minLength"]
+        result = summerization.summerizer(
+            paragraph=paragraph, maxLength=maxLength, minLength=minLength
+        )
+    if data["operation"] == "punctuate":
+        paragraph = data["paragraph"]
+        result = punctuation.punctuater(paragraph)
+    return Response(result)
 
-        summarizer = pipeline("summarization")
-        summary = summarizer(paragraph, max_length=100, min_length=50, do_sample=False)
-        summary = summary[0]["summary_text"]
-        end = time.time()
-        timeTaken = round(end - start)
-        if timeTaken < 59:
-            if timeTaken == 0 or timeTaken == 1:
-                timeTaken = str(timeTaken) + " sec"
-            else:
-                timeTaken = str(timeTaken) + " secs"
-        else:
-            mints = timeTaken / 60
-            if timeTaken == 1:
-                timeTaken = str(mints) + " mint"
-            else:
-                timeTaken = str(mints) + " mints"
-        res = {
-            "success": True,
-            "data": summary,
-            "timeTaken": timeTaken,
-        }
-        return Response(res)
-    except NameError:
-        res = {"success": False, "error": NameError}
-        return Response(res)
+# Functions
