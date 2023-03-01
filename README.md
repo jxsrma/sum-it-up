@@ -11,8 +11,6 @@ based approach in summarizing text and manipulating textual data.
 
 # Installation Guide
 
-<br>
-
 ## Models
 In local environment, the models will be downloaded in:
 ```
