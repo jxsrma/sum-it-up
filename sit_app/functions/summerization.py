@@ -1,9 +1,8 @@
-import time
-
+from . import timerCalculator
 
 def summerizer(paragraph, maxLength, minLength):
     try:
-        start = time.time()
+        start = timerCalculator.now()
 
         from transformers import pipeline
         from fastpunct import FastPunct
@@ -27,19 +26,8 @@ def summerizer(paragraph, maxLength, minLength):
         text = text.strip()
         text
 
-        end = time.time()
-        timeTaken = round(end - start)
-        if timeTaken < 59:
-            if timeTaken == 0 or timeTaken == 1:
-                timeTaken = str(timeTaken) + " sec"
-            else:
-                timeTaken = str(timeTaken) + " secs"
-        else:
-            mints = timeTaken / 60
-            if timeTaken == 1:
-                timeTaken = str(mints) + " mint"
-            else:
-                timeTaken = str(mints) + " mints"
+        end = timerCalculator.now()
+        timeTaken = timerCalculator.timeTaken(end,start)
         return {
             "success": True,
             "data": text,
