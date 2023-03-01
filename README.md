@@ -13,9 +13,10 @@ based approach in summarizing text and manipulating textual data.
 
 <br>
 
-## Punctuation Model
+## Models
+In local environment, the models will be downloaded in:
 ```
-https://huggingface.co/oliverguhr/fullstop-punctuation-multilang-large/blob/main/tf_model.h5
+C:\Users\User\.cache\
 ```
 
 <br/>
