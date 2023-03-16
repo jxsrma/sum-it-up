@@ -1,0 +1,3 @@
+.selected {
+  @apply bg-slate-50 px-2 text-slate-600 rounded-lg;
+}
