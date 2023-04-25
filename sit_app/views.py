@@ -17,19 +17,24 @@ def getData(request):
 @api_view(["POST"])
 def optimize(request):
     data = json.loads(request.body)
-
+    print()
+    print(data)
+    print()
+    maxLength = data.get("maxLength")
+    minLength = data.get("minLength")
+    print(maxLength)
+    print(minLength)
     # Summerization
-    if data["operation"] == "summerize":
+    if data["operation"] == "summarize":
         paragraph = data["paragraph"]
         if "maxLength" not in data:
-            wordLength = len(paragraph.split(' '))
+            wordLength = len(paragraph.split(" "))
             maxLength = wordLength
         if "minLength" not in data:
-            wordLength = len(paragraph.split(' '))
-            minLength = wordLength/2
-        else:
-            maxLength = data["maxLength"]
-            minLength = data["minLength"]
+            wordLength = len(paragraph.split(" "))
+            minLength = wordLength / 2
+        print(maxLength)
+        print(minLength)
         result = summerization.summerizer(
             paragraph=paragraph, maxLength=maxLength, minLength=minLength
         )
@@ -40,6 +45,9 @@ def optimize(request):
     if data["operation"] == "grammerize":
         paragraph = data["paragraph"]
         result = grammerization.grammerizer(paragraph)
+    print()
+    print(result)
+    print()
     return Response(result)
 
 

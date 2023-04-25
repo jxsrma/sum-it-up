@@ -1,11 +1,11 @@
 from . import timerCalculator
+from transformers import pipeline
+from fastpunct import FastPunct
+
 
 def summerizer(paragraph, maxLength, minLength):
     try:
         start = timerCalculator.now()
-
-        from transformers import pipeline
-        from fastpunct import FastPunct
 
         summarizer = pipeline("summarization")
         summary = summarizer(
@@ -27,7 +27,7 @@ def summerizer(paragraph, maxLength, minLength):
         text
 
         end = timerCalculator.now()
-        timeTaken = timerCalculator.timeTaken(end,start)
+        timeTaken = timerCalculator.timeTaken(end, start)
         return {
             "success": True,
             "data": text,

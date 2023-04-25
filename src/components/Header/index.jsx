@@ -6,6 +6,7 @@ import modes from "constants/modes";
 
 const Header = () => {
   const { mode, updateModeName, updateModeValue } = useContext(AppContext);
+  console.log(mode);
   return (
     <header
       className={`
@@ -35,15 +36,15 @@ const Header = () => {
 
         <div
           className={`flex items-center gap-2 transition-[width] duration-500 ease-out
-            ${mode.name === "Summarize" ? "w-44" : "w-0 opacity-0"}
+            ${mode.name === modes.summarize ? "w-44" : "w-0 opacity-0"}
           `}
         >
           <input
             name="range"
             type="range"
-            min="0"
+            min="30"
             max="100"
-            value={mode?.value || 50}
+            value={mode?.value}
             onChange={(e) => updateModeValue(e.target.value)}
             className="appearance-none h-2 bg-slate-200 accent-slate-100 rounded-full"
           />

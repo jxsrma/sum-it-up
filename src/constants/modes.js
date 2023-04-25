@@ -1,5 +1,5 @@
 export default {
-  summarize: "Summarize",
-  punctuate: "Punctuate",
-  grammarize: "Grammarize",
+  summarize: "summarize",
+  punctuate: "punctuate",
+  grammarize: "grammarize",
 };
