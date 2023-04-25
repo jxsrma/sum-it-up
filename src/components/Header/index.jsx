@@ -20,12 +20,12 @@ const Header = () => {
         >
           Punctuate
         </button>
-        <button
+        {/* <button
           className={mode.name === modes.grammarize ? "selected" : ""}
           onClick={() => updateModeName(modes.grammarize)}
         >
           Grammarize
-        </button>
+        </button> */}
         <button
           className={mode.name === modes.summarize ? "selected" : ""}
           onClick={() => updateModeName(modes.summarize)}
@@ -51,11 +51,11 @@ const Header = () => {
           <label htmlFor="range">{mode.value}%</label>
         </div>
       </nav>
-      <nav className="flex items-center justify-between text-white">
+      {/* <nav className="flex items-center justify-between text-white">
         <button className="px-4 py-2 bg-red-200 text-red-600 rounded">
           Login
         </button>
-      </nav>
+      </nav> */}
     </header>
   );
 };
