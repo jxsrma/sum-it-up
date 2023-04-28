@@ -10,22 +10,27 @@ const Header = () => {
   return (
     <header
       className={`
-      flex items-center flex-col gap-4 md:flex-row justify-between w-screen ${xyPaddingResponsive} border-b-2`}
+      flex items-center flex-col gap-4 md:flex-row justify-between w-screen ${xyPaddingResponsive} border-b-2
+      `}
     >
       <h1 className="text-3xl font-bold text-slate-700">Sum-It-Up</h1>
-      <nav className="flex gap-4 justify-around  bg-slate-400 flex-col md:flex-row px-4 py-2 text-white shadow-lg rounded-sm md:rounded-lg items-center">
+      <nav
+        className="flex 
+        text-sm w-full sm:w-fit md:text-base
+      gap-1 sm:gap-4 justify-around  bg-slate-400 flex-col md:flex-row px-4 py-2 text-white shadow-lg rounded-sm md:rounded-lg items-center"
+      >
         <button
           className={mode.name === modes.punctuate ? "selected" : ""}
           onClick={() => updateModeName(modes.punctuate)}
         >
           Punctuate
         </button>
-        {/* <button
+        <button
           className={mode.name === modes.grammarize ? "selected" : ""}
           onClick={() => updateModeName(modes.grammarize)}
         >
           Grammarize
-        </button> */}
+        </button>
         <button
           className={mode.name === modes.summarize ? "selected" : ""}
           onClick={() => updateModeName(modes.summarize)}
@@ -35,8 +40,8 @@ const Header = () => {
         {/* input type range */}
 
         <div
-          className={`flex items-center gap-2 transition-[width] duration-500 ease-out
-            ${mode.name === modes.summarize ? "w-44" : "w-0 opacity-0"}
+          className={`flex items-center gap-2 transition-all duration-500 ease-out
+            ${mode.name === modes.summarize ? "w-44" : "w-0 h-0 opacity-0"}
           `}
         >
           <input
@@ -46,7 +51,7 @@ const Header = () => {
             max="100"
             value={mode?.value}
             onChange={(e) => updateModeValue(e.target.value)}
-            className="appearance-none h-2 bg-slate-200 accent-slate-100 rounded-full"
+            className="appearance-none w-full h-2 bg-slate-200 accent-slate-100 rounded-full"
           />
           <label htmlFor="range">{mode.value}%</label>
         </div>

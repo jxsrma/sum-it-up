@@ -2,6 +2,7 @@ import { AppContext } from "App";
 import modes from "constants/modes";
 import React, { useContext, useReducer, useState } from "react";
 import TextArea from "./Textarea";
+import GrammarOutput from "./GrammarOutput";
 
 const reducer = (state, action) => {
   if (action?.set) return { ...state, ...action.set };
@@ -11,7 +12,11 @@ const reducer = (state, action) => {
 };
 
 const ActionArea = () => {
-  const [state, dispatch] = useReducer(reducer, { input: "", output: "" });
+  const [state, dispatch] = useReducer(reducer, {
+    input: "",
+    output: "",
+    grammarOutput: [],
+  });
   const { mode, loading, setLoading } = useContext(AppContext);
   console.log(mode);
 
@@ -38,12 +43,24 @@ const ActionArea = () => {
     });
     const data = await res.json();
     console.log(data);
-    dispatch({ set: { output: data?.data || "Something went wrong" } });
+    let output = "";
+    let grammarOutput = [];
+    if (mode.name === modes.grammarize) {
+      grammarOutput = data?.data;
+    } else {
+      output = data?.data;
+    }
+    dispatch({
+      set: {
+        grammarOutput: grammarOutput,
+        output: output || "Something went wrong",
+      },
+    });
     setLoading(false);
   };
 
   return (
-    <div className="flex flex-1 gap-4">
+    <div className="flex md:flex-row flex-col flex-1 gap-4">
       {/* input textarea */}
       <TextArea
         placeholder="Type or Paste here..."
@@ -65,12 +82,20 @@ const ActionArea = () => {
         }
       />
       {/* output textarea */}
-      <TextArea
-        placeholder="You will see the output here..."
-        name="output"
-        value={state.output}
-        onChange={dispatch}
-      />
+      {mode.name === modes.grammarize ? (
+        <GrammarOutput
+          input={state.input}
+          grammarOutput={state.grammarOutput}
+        />
+      ) : (
+        <TextArea
+          editable={false}
+          placeholder="You will see the output here..."
+          name="output"
+          value={state.output}
+          onChange={dispatch}
+        />
+      )}
     </div>
   );
 };

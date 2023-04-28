@@ -22,19 +22,16 @@ def optimize(request):
     print()
     maxLength = data.get("maxLength")
     minLength = data.get("minLength")
-    print(maxLength)
-    print(minLength)
+    result = {}
     # Summerization
     if data["operation"] == "summarize":
         paragraph = data["paragraph"]
+        wordLength = len(paragraph.split(" "))
         if "maxLength" not in data:
-            wordLength = len(paragraph.split(" "))
             maxLength = wordLength
         if "minLength" not in data:
-            wordLength = len(paragraph.split(" "))
-            minLength = wordLength / 2
-        print(maxLength)
-        print(minLength)
+            minLength = wordLength // 2
+        minLength = int(wordLength * (minLength / 100))
         result = summerization.summerizer(
             paragraph=paragraph, maxLength=maxLength, minLength=minLength
         )
@@ -42,7 +39,7 @@ def optimize(request):
         paragraph = data["paragraph"]
         result = punctuation.punctuater(paragraph)
 
-    if data["operation"] == "grammerize":
+    if data["operation"] == "grammarize":
         paragraph = data["paragraph"]
         result = grammerization.grammerizer(paragraph)
     print()
