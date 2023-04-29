@@ -17,9 +17,6 @@ def getData(request):
 @api_view(["POST"])
 def optimize(request):
     data = json.loads(request.body)
-    print()
-    print(data)
-    print()
     maxLength = data.get("maxLength")
     minLength = data.get("minLength")
     result = {}
@@ -42,9 +39,6 @@ def optimize(request):
     if data["operation"] == "grammarize":
         paragraph = data["paragraph"]
         result = grammerization.grammerizer(paragraph)
-    print()
-    print(result)
-    print()
     return Response(result)
 
 
