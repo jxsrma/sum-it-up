@@ -10,8 +10,7 @@ from .functions import summerization, punctuation, grammerization
 
 @api_view(["GET"])
 def getData(request):
-    home = {"name": "This is Homepage"}
-    return Response(home)
+    return render(request, 'index.html')
 
 
 @api_view(["POST"])
@@ -40,6 +39,3 @@ def optimize(request):
         paragraph = data["paragraph"]
         result = grammerization.grammerizer(paragraph)
     return Response(result)
-
-
-# Functions
